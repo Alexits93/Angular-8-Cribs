@@ -1,0 +1,22 @@
+<div class="row pt-4">
+  <div class="col-12">
+    <div class="row pb-4">
+      <div class="col-4">
+        <label for="sort-field">Sort By</label>
+        <select name="sort-field" id="sort-field" class="form-control" [(ngModel)]="sortField">
+          <option *ngFor="let field of sortFields" [value]="field">{{ utilService.capitalize(field) }}</option>
+        </select>
+      </div>
+      <div class="col-4">
+        <label for="sort-direction">Sort Direction</label>
+        <div>
+          <button class="btn btn-primary mr-2" [ngClass]="{'btn-success': sortDirection == 'asc'}" (click)="sortDirection = 'asc'">Asc</button>
+          <button class="btn btn-primary" [ngClass]="{'btn-success': sortDirection == 'desc'}" (click)="sortDirection = 'desc'">Desc</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngFor="let crib of cribs | sortBy: [sortField, sortDirection]" class="col-3 mb-3">
+    <app-crib-card [crib] ="crib"></app-crib-card>
+  </div>
+</div>

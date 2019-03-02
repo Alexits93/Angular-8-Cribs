@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+.img-thumbnail{
+    min-height: 350px;
+}
+.badge{
+    margin-right: 5px;
+    &:last-of-type{
+        margin-right: 0;
+    }
+}
