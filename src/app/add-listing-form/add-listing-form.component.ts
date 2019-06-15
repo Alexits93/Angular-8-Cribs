@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { CribsService } from './../services/cribs.service';
-import { UtilService } from './../services/util.service';
+import { CribsService } from '../services/cribs.service';
+import { UtilService } from '../services/util.service';
 import { NgForm } from '@angular/forms';
 
 @Component({

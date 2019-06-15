@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
-import { Crib } from '../crib';
-import { Subject } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Crib} from '../crib';
+import {Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +10,15 @@ export class CribsService {
 
   public newCribSubject = new Subject<any>();
   file = '../assets/data/cribs.json';
-  constructor(private http: HttpClient) { }
 
-  getAllCribs(){
+  constructor(private http: HttpClient) {
+  }
+
+  getAllCribs() {
     return this.http.get<Array<Crib>>(this.file);
   }
 
-  addCrib(data){
+  addCrib(data) {
     data.image = 'default-crib';
     this.newCribSubject.next(data);
   }

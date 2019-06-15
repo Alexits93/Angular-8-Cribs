@@ -1,24 +1,23 @@
 <div class="img-thumbnail">
-
   <img src="assets/images/{{crib.image}}.jpg" alt="" width="100%">
-
   <div class="caption">
-    <div *ngIf="!crib.showDetails">
+    <div *ngIf="!showDetails">
       <span class="badge badge-primary">{{crib.type}}</span>
-      <h3><i class="glyphicon glyphicon-tag">{{crib.price | currency:'USD':true}}</i></h3>
+      <h3><i class="glyphicon glyphicon-tag">{{crib.price | currency:'USD':'symbol'}}</i></h3>
       <h4><i class="glyphicon gliphicon-home">{{crib.address}}</i></h4>
       <hr>
-      <button class="btn btn-sm btn-success" *ngIf="!crib.showDetails" (click)="crib.showDetails = !crib.showDetails">Details</button>
     </div>
-    <div *ngIf="crib.showDetails">
+    <div *ngIf="showDetails">
       <div class="details">
         <span class="badge badge-primary">Beds: {{crib.bedrooms}}</span>
         <span class="badge badge-primary">Baths: {{crib.bathrooms}}</span>
         <span class="badge badge-primary">SqFt: {{crib.area}}</span>
         <p>{{crib.description}}</p>
         <hr>
-        <button class="btn btn-sm btn-danger" (click)="crib.showDetails = !crib.showDetails">Close</button>
       </div>
     </div>
+    <button (click)="showDetails = !showDetails"
+            [innerHTML]="showDetails ? 'Close' : 'Details'"
+            [ngClass]="showDetails ? 'btn btn-sm btn-danger' : 'btn btn-sm btn-primary'"></button>
   </div>
 </div>

@@ -1,13 +1,14 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UtilService {
 
-  constructor() { }
+  constructor() {
+  }
 
-  public capitalize(word): void{
+  public capitalize(word): void {
     return word.charAt(0).toUpperCase() + word.substring(1);
   }
 }
