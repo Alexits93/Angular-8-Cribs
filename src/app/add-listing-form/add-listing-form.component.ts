@@ -9,7 +9,7 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./add-listing-form.component.scss']
 })
 export class AddListingFormComponent implements OnInit {
-  @ViewChild('newCribForm') newCribForm: NgForm;
+  @ViewChild('newCribForm', { static: true }) newCribForm: NgForm;
   propertyTypes: Array<string> = ['House', 'Condo', 'Duplex'];
 
   constructor(
