@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "^8.2.0-rc.0",
     "@angular/router": "^8.2.0-rc.0",
     "@ngtools/webpack": "^8.1.2",
+    "angular-cli-ghpages": "^0.5.3",
     "bootstrap": "^4.3.1",
     "core-js": "^2.6.9",
     "jquery": "^3.4.1",
