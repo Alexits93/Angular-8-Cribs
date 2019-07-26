@@ -2,20 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Crib } from '../crib';
 import { CribsService } from '../services/cribs.service';
-import { UtilService } from '../services/util.service';
 
 @Component({
   selector: 'app-crib-listing',
-  templateUrl: './crib-listing.component.html',
-  styleUrls: ['./crib-listing.component.scss']
+  templateUrl: './crib-listing.component.html'
 })
 export class CribListingComponent implements OnInit {
 
-  cribs: Array<Crib>;
+  cribs: Crib[];
   error: string;
   sortField = 'price';
   sortDirection = 'asc';
-  sortFields: Array<string> = [
+  sortFields: string[] = [
     'address',
     'area',
     'bathrooms',
@@ -26,8 +24,7 @@ export class CribListingComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private cribsService: CribsService,
-    private utilService: UtilService
+    private cribsService: CribsService
     ) { }
 
   ngOnInit() {

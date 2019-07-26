@@ -8,14 +8,14 @@ import {Subject} from 'rxjs';
 })
 export class CribsService {
 
-  public newCribSubject = new Subject<any>();
+  public newCribSubject = new Subject<Crib>();
   file = '../assets/data/cribs.json';
 
   constructor(private http: HttpClient) {
   }
 
   getAllCribs() {
-    return this.http.get<Array<Crib>>(this.file);
+    return this.http.get<Crib[]>(this.file);
   }
 
   addCrib(data) {

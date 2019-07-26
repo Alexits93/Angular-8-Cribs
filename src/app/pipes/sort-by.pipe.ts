@@ -5,7 +5,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 })
 export class SortByPipe implements PipeTransform {
 
-  transform(array: Array<string>, args?: any): any {
+  transform(array: string[], args?: string[]): string[] {
     if (array) {
       const sortField = args[0];
       const sortDirection = args[1];
@@ -15,7 +15,7 @@ export class SortByPipe implements PipeTransform {
         modifier = -1;
       }
 
-      array.sort((a: any, b: any) => {
+      array.sort((a: string, b: string) => {
         if (a[sortField] < b[sortField]) {
           return -1 * modifier;
         } else if (a[sortField] > b[sortField]) {

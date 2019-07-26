@@ -4,14 +4,14 @@
       <div class="col-4">
         <label for="sort-field">Sort By</label>
         <select name="sort-field" id="sort-field" class="form-control" [(ngModel)]="sortField">
-          <option *ngFor="let field of sortFields" [value]="field">{{ utilService.capitalize(field) }}</option>
+          <option *ngFor="let field of sortFields" [value]="field">{{field}}</option>
         </select>
       </div>
       <div class="col-4">
         <label>Sort Direction</label>
         <div>
-          <button class="btn btn-primary mr-2" [ngClass]="{'btn-success': sortDirection == 'asc'}" (click)="sortDirection = 'asc'">Asc</button>
-          <button class="btn btn-primary" [ngClass]="{'btn-success': sortDirection == 'desc'}" (click)="sortDirection = 'desc'">Desc</button>
+          <button class="btn btn-primary mr-2" [ngClass]="{'btn-success': sortDirection === 'asc'}" (click)="sortDirection = 'asc'">Asc</button>
+          <button class="btn btn-primary" [ngClass]="{'btn-success': sortDirection === 'desc'}" (click)="sortDirection = 'desc'">Desc</button>
         </div>
       </div>
     </div>

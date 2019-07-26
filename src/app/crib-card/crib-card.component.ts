@@ -1,20 +1,15 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Crib} from '../crib';
 
 @Component({
   selector: 'app-crib-card',
-  templateUrl: './crib-card.component.html',
-  styleUrls: ['./crib-card.component.scss']
+  templateUrl: './crib-card.component.html'
 })
-export class CribCardComponent implements OnInit {
+export class CribCardComponent {
 
   @Input('crib') crib: Crib;
   showDetails = false;
 
   constructor() {
   }
-
-  ngOnInit() {
-  }
-
 }
