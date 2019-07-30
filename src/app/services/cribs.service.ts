@@ -9,7 +9,7 @@ import {Subject} from 'rxjs';
 export class CribsService {
 
   public newCribSubject = new Subject<Crib>();
-  file = '../assets/data/cribs.json';
+  file = './assets/data/cribs.json';
 
   constructor(private http: HttpClient) {
   }
