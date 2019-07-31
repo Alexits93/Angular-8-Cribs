@@ -2,15 +2,10 @@ import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
 
 describe('workspace-project App', () => {
-  let page: AppPage;
-
-  beforeEach(() => {
-    page = new AppPage();
-  });
 
   it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to cribs!');
+    AppPage.navigateTo();
+    expect(AppPage.getTitleText()).toEqual('Angular 8 demo');
   });
 
   afterEach(async () => {
