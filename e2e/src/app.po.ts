@@ -1,8 +1,8 @@
 import { browser, by, element } from 'protractor';
 
 export class AppPage {
-  static navigateTo() {
-    return browser.get(browser.baseUrl) as Promise<any>;
+  static navigateTo(url: string) {
+    return browser.get(url) as Promise<any>;
   }
 
   static getTitleText() {
